@@ -1,0 +1,32 @@
+parameters:
+      - name: place_id, amenity_id
+        in: path
+        type: string
+        required: True
+    definitions:
+      Amenity:
+        type: object
+        properties:
+          name: amenity
+            type: dict
+      place_id:
+        type: string
+    responses:
+      "responseMessages": [
+            {
+              "code": 404,
+              "message": "Not Found"
+            }
+          ]
+      200:
+        description: A list of amenities
+        schema:
+          $ref: '#/definitions/Amenity'
+        examples:
+                 {
+                  "_class_": "Amenity",
+                  "created_at": "2017-04-16T03:14:06",
+                  "id": "b75ae104-a8a3-475e-bf74-ab0a066ca2af",
+                  "name": "Tv",
+                  "updated_at": "2017-04-16T03:15:13"
+                 }

@@ -1,0 +1,45 @@
+parameters:
+      - name: place_id
+        in: path
+        type: string
+        required: True
+    definitions:
+      Place:
+        type: object
+        properties:
+          name: Review
+            type: dict
+      place_id:
+        type: string
+    responses:
+      "responseMessages": [
+            {
+              "code": 400,
+              "Error": "Not a JSON"
+            },
+            {
+              "code": 400,
+              "Error": "Missing user_id"
+            },
+            ,
+            {
+              "code": 400,
+              "Error": "Missing text"
+            },
+            {
+              "code": 404,
+              "message": "Not Found"
+            }
+          ]
+      200:
+        description: create review
+        schema:
+          $ref: '#/definitions/Review'
+        examples:
+                 {
+                  "_class_": "Review",
+                  "created_at": "2017-04-16T03:14:06",
+                  "id": "b75ae104-a8a3-475e-bf74-ab0a066ca2af",
+                  "description": "long text here",
+                  "updated_at": "2017-04-16T03:15:13"
+                 }

@@ -1,0 +1,26 @@
+parameters:
+  - name: review_id
+    in: path
+    type: string
+    required: False
+definitions:
+  Review:
+    type: object
+    properties:
+      name: review
+        type: dict
+  review_id:
+    type: string
+responses:
+  200:
+    description: get a review by id
+    schema:
+      $ref: '#/definitions/Review'
+    examples:
+             {
+              "_class_": "Review",
+              "created_at": "2017-04-16T03:14:06",
+              "id": "b75ae104-a8a3-475e-bf74-ab0a066ca2af",
+              "description": "long text here",
+              "updated_at": "2017-04-16T03:15:13"
+              }

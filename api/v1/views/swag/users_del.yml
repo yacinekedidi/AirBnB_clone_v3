@@ -1,0 +1,30 @@
+Example endpoint returning a list of colors by palette
+In this example the specification is taken from external YAML file
+---
+    parameters:
+      - name: user_id
+        in: path
+        type: string
+        required: False
+    definitions:
+      User:
+        type: object
+        properties:
+          name: User
+            type: dict
+      user_id:
+        type: string
+    responses:
+      "responseMessages": [
+            {
+              "code": 404,
+              "message": "Not Found"
+            }
+          ]
+      200:
+        description: A list of Users
+        schema:
+          $ref: '#/definitions/User'
+        examples:
+                 {}
+

@@ -1,0 +1,20 @@
+parameters:
+  - name: city_id
+    in: path
+    type: string
+    required: False
+definitions:
+  City:
+    type: object
+    properties:
+      name: city
+        type: dict
+  city_id:
+    type: string
+responses:
+  200:
+    description: A list of cities
+    schema:
+      $ref: '#/definitions/City'
+    examples:
+             {}

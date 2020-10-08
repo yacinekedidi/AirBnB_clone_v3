@@ -1,0 +1,23 @@
+Example endpoint returning a list of colors by palette
+In this example the specification is taken from external YAML file
+---
+    parameters:
+      - name: amenity_id
+        in: path
+        type: string
+        required: False
+    definitions:
+      Amenity:
+        type: object
+        properties:
+          name: amenity
+            type: dict
+      amenity_id:
+        type: string
+    responses:
+      200:
+        description: A list of amenities
+        schema:
+          $ref: '#/definitions/Amenity'
+        examples:
+                 {}

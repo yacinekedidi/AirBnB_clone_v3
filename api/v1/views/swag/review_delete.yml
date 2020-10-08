@@ -1,0 +1,20 @@
+parameters:
+  - name: review_id
+    in: path
+    type: string
+    required: False
+definitions:
+  Review:
+    type: object
+    properties:
+      name: review
+        type: dict
+  review_id:
+    type: string
+responses:
+  200:
+    description: delete a review by id
+    schema:
+      $ref: '#/definitions/Review'
+    examples:
+             {}

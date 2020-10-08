@@ -1,0 +1,20 @@
+parameters:
+  - name: place_id, amenity_id
+    in: path
+    type: string
+    required: False
+definitions:
+  Amenity:
+    type: object
+    properties:
+      name: amenity
+        type: dict
+  amenity_id:
+    type: string
+responses:
+  200:
+    description: deletes an amenity
+    schema:
+      $ref: '#/definitions/Amenity'
+    examples:
+             {}

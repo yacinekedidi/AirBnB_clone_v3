@@ -1,0 +1,29 @@
+Example endpoint returning a list of colors by palette
+In this example the specification is taken from external YAML file
+---
+    parameters:
+      - name: city_id
+        in: path
+        type: string
+        required: True
+    definitions:
+      Place:
+        type: object
+        properties:
+          name: City
+            type: dict
+      city_id:
+        type: string
+    responses:
+      "responseMessages": [
+            {
+              "code": 404,
+              "message": "Not Found"
+            }
+          ]
+      200:
+        description: A list of Places
+        schema:
+          $ref: '#/definitions/Place'
+        examples:
+		  {}

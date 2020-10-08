@@ -1,0 +1,29 @@
+Example endpoint returning a list of colors by palette
+In this example the specification is taken from external YAML file
+---
+    parameters:
+      - name: state_id
+        in: path
+        type: string
+        required: False
+    definitions:
+      State:
+        type: object
+        properties:
+          name: State
+            type: dict
+      State_id:
+        type: string
+    responses:
+      "responseMessages": [
+            {
+              "code": 404,
+              "message": "Not Found"
+            }
+          ]
+      200:
+        description: A list of States
+        schema:
+          $ref: '#/definitions/State'
+        examples:
+		 {}
